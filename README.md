@@ -89,16 +89,24 @@ https://drive.google.com/file/d/1Dspfw7MF1_8ntxf5zayzeldprTyfGLR-/view?usp=shari
 # Action
 
 - rails webpacker:install
-- Diagram - gem erd
-    $ sudo apt install graphviz
-    // Gem
+- Diagram: gem erd
+    + $ sudo apt install graphviz
+    + // Gem
         group :development do
             gem "rails-erd"
         end
-    $ rake erd
-- Create model
-    + user : role
-    + post : references > user
-    + comment : references > post
-- Install gem active_admin, devise
-    + rails g active_admin:install
+    + $ rake erd
+- Đăng nhập đăng kí cho bảng user 
+    + Install gem devise : gem 'devise' > bundle install
+    + rails generate devise:install
+    + rails generate devise User
+    + rails generate devise:views -v registrations confirmations
+    + rails generate devise:controllers Users -c=sessions
+- Custom giao diện 
+- Tạo Static_pages home blog dashboard
+- Tạo scaffold subjects 
+
+# Stream
+
+- User đăng kí tài khoản gmail > đăng kí thành công
+- Admin liên kết tài khoản (tạo tài khoản) sinh viên/ giáo viên/ admin > thực hiện phân quyền tài khoản (phân quyền hàng loạt)
