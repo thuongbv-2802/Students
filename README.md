@@ -88,25 +88,52 @@ https://drive.google.com/file/d/1Dspfw7MF1_8ntxf5zayzeldprTyfGLR-/view?usp=shari
 
 # Action
 
-- rails webpacker:install
+- $ rails webpacker:install
+- $ bundle install --without production
 - Diagram: gem erd
     + $ sudo apt install graphviz
     + // Gem
         group :development do
             gem "rails-erd"
         end
+    + $ bundle install
     + $ rake erd
-- Đăng nhập đăng kí cho bảng user 
-    + Install gem devise : gem 'devise' > bundle install
-    + rails generate devise:install
-    + rails generate devise User
-    + rails generate devise:views -v registrations confirmations
-    + rails generate devise:controllers Users -c=sessions
-- Custom giao diện 
-- Tạo Static_pages home blog dashboard
-- Tạo scaffold subjects 
+
+- install bootstrap 5 :
+    + $ yarn add bootstrap@next @popperjs/core // install bootstrap 5.0.0
+    + $ mkdir -p app/javascript/stylesheets
+    + $ touch app/javascript/stylesheets/application.scss  // @import "bootstrap";
+    + file app/javascript/packs/application.js 
+        window.bootstrap = require("bootstrap");
+        import "../stylesheets/application.scss";
+
+- $ rails generate controller static_pages index blog 
+
+- Add gem devise:
+    + Gemfile : gem 'devise'
+    + $ bundle install
+    + $ rails generate devise:install
+    + $ rails generate devise Users
+    + $ bundle exec rake db:create
+    + $ bundle exec rake db:migrate
+    + $ rails generate devise:views users
+    + $ rails generate devise:controllers users 
+
+- Customize inteface admin :
+    + form login/logout
+    + Gem will-paginate
+- $npm i bootstrap-icons / $ yarn add bootstrap-icons
+- Scaffold > student, teacher, subject
+- Scaffold guardians
+
+
 
 # Stream
 
 - User đăng kí tài khoản gmail > đăng kí thành công
 - Admin liên kết tài khoản (tạo tài khoản) sinh viên/ giáo viên/ admin > thực hiện phân quyền tài khoản (phân quyền hàng loạt)
+
+# Bug
+
+- Không thêm được mối quan hệ cho học sinh 
+- Một Student có thể tạo nhiều mối quan hệ với 1 guardian
