@@ -1,6 +1,6 @@
 # Require
 
-"" Xây dựng chương trình quản lý học sinh (áp dụng cho khung chuowngtrinfh trung học phổ thông) ""
+"" Xây dựng chương trình quản lý học sinh (áp dụng cho khung chương trình trung học phổ thông) ""
 
 # User 
 
