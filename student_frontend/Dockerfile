@@ -1,13 +1,7 @@
-FROM  node:alpine
+FROM node:12.18.3-alpine
 
-USER root
-RUN npm install -g @quasar/cli && \
-    npm install -g @vue/cli && \
-    npm install -g @vue/cli-init 
+ENV APP_HOME /app
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
 
-RUN mkdir /home/node/app
-
-# VOLUME [ "/home/node/app" ]
-WORKDIR /home/node/app
-
-CMD /bin/sh
+RUN apk update && npm install -g @vue/cli
